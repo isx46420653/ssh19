@@ -11,4 +11,5 @@ bash /opt/docker/install.sh && echo "Install OK"
 /sbin/nscd && echo "nscd OK"
 
 # Engeguem SSH
-/sbin/sshd -D 
+/usr/bin/ssh-keygen -A    
+/sbin/sshd -D

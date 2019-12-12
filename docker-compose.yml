@@ -1,0 +1,24 @@
+version: "2"
+services:
+  ldap:
+    image: isx46420653/ldapserver:latest
+    container_name: ldapserver
+    hostname: ldapserver
+    ports:
+      - "389:389"
+    networks:
+     - ldapnet
+  samba:
+    image: isx46420653/ssh19:base
+    container_name: ssh
+    hostname: ssh
+    volumes:
+      - "homes:/tmp/home"
+    ports:
+      - "2022:22"
+    networks:
+     - ldapnet
+networks:
+  ldapnet:
+volumes:
+  homes:
