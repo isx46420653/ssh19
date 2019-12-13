@@ -16,6 +16,7 @@ services:
       - "homes:/tmp/home"
     ports:
       - "2022:22"
+    privileged: true
     networks:
      - ldapnet
 networks:
